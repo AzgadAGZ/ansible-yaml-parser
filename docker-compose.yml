@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+init_container:
+  image: ansible-yaml-parser
+  volumes:
+    - "./examples:/app/templates"
+    - "./rendered:/app/rendered"
+  environment:
+    TRAKT_USER: AzgadAGZ
+    TRANSMISSION_USER: Poshox
+    TRANSMISSION_PASSWORD: Three
+    LAST_ONE: Four
