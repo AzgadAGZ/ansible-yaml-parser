@@ -1,0 +1,11 @@
+---
+
+- hosts: localhost
+  tasks:
+    - name: Render Jinja Template to Yml/Yaml
+      template:
+        src: "{{ item }}"
+        dest: "rendered/{{ (item | basename | splitext )[0] }}"
+      with_fileglob:
+        - 'templates/*.yml.j2'
+        - "templates/*.yaml.j2"

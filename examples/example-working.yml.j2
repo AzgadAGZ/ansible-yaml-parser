@@ -1,0 +1,4 @@
+---
+init:
+  value: "{{ lookup('ansible.builtin.env', "LSCOLORS", default=Undefined ) }}"
+  another_value: "Test"

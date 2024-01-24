@@ -1,0 +1,8 @@
+---
+init:
+    # This variable called "NOT_FOUND", indeed, won't be found lol, so, the default value
+    # "Undefined" will cause the execution to fail. This will help us to notice some env var
+    # is missing. If you want to avoid thie behavior, just remove the default value, but
+    # keep in mind that you could end having rendered files with missing values.
+  value: "{{ lookup('ansible.builtin.env', "NOT_FOUND", default=Undefined ) }}"
+  another_value: "Test"
